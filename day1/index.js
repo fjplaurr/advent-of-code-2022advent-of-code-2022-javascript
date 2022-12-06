@@ -1,7 +1,8 @@
 const { readFileSync } = require("fs");
-const data = readFileSync("input.txt", "utf-8");
+const path = require("path");
 
-const calories = data.split("\n").map(num => parseInt(num));
+const data = readFileSync(path.resolve(__dirname, "input.txt"), "utf-8");
+const calories = data.split("\n").map((num) => parseInt(num));
 
 let currentSum = 0;
 
@@ -19,7 +20,9 @@ const caloriesByElf = calories.reduce((accumulator, current) => {
 const orderedCaloriesByElf = [...caloriesByElf].sort((a, b) => b - a);
 
 // Part 1
-console.log(orderedCaloriesByElf[0])
+console.log(orderedCaloriesByElf[0]);
 
 // Part 2
-console.log(orderedCaloriesByElf[0] + orderedCaloriesByElf[1] + orderedCaloriesByElf[2])
+console.log(
+  orderedCaloriesByElf[0] + orderedCaloriesByElf[1] + orderedCaloriesByElf[2]
+);
