@@ -39,7 +39,6 @@ const stacks = [
 //   for (let i = 0; i < cratesQuantity; i++) {
 //     const stackFrom = stacks[fromStackIndex - 1];
 //     const stackTo = stacks[toStackIndex - 1];
-
 //     const lastElement = stackFrom.pop();
 //     stackTo.push(lastElement);
 //   }
@@ -57,21 +56,16 @@ movements.forEach((movement) => {
   const toStackIndex = parseInt(mov[5]);
 
   stackFrom = stacks[fromStackIndex - 1];
-
   stackTo = stacks[toStackIndex - 1];
 
   const cratesToMove = stackFrom.slice(stackFrom.length - cratesQuantity);
-  cratesToMove;
 
   stackFrom = stackFrom.slice(0, -cratesQuantity);
-  stackFrom;
   stackTo = [...stackTo, ...cratesToMove];
-  stackTo;
   stacks[fromStackIndex - 1] = stackFrom;
   stacks[toStackIndex - 1] = stackTo;
 });
 
-console.log(stacks);
 const messagePart2 = stacks.map((stack) => stack.at(-1)).join("");
 
 console.log(messagePart2);
