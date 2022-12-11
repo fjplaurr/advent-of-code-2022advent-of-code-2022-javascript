@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/day8/index.js",
+      "program": "${workspaceFolder}/day9/index.js",
       "runtimeExecutable": "nodemon",
       "runtimeArgs": ["--inspect"]
     },
